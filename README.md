@@ -111,7 +111,7 @@ The `/stress` endpoint streams one JSON object per line, per second:
 docker compose up --build -d
 ```
 
-This starts all six apps with a **2 GB memory limit** each. Each is accessible on its assigned port:
+This starts all six apps with a **1 GB memory limit** each. Each is accessible on its assigned port:
 
 ```
 http://localhost:8081   # Python
