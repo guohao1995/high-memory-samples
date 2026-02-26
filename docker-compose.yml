@@ -1,0 +1,85 @@
+services:
+  python:
+    build: ./python
+    ports:
+      - "8081:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+
+  nodejs:
+    build: ./nodejs
+    ports:
+      - "8082:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:8080/')"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+
+  dotnet:
+    build: ./dotnet
+    ports:
+      - "8083:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+
+  java:
+    build: ./java
+    ports:
+      - "8084:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 10s
+      start_period: 30s
+      retries: 3
+
+  php:
+    build: ./php
+    ports:
+      - "8085:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+
+  go:
+    build: ./go
+    ports:
+      - "8086:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 3s
+      retries: 3

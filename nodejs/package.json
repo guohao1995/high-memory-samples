@@ -1,0 +1,25 @@
+{
+  "name": "memory-stress-nodejs",
+  "version": "1.0.0",
+  "description": "Node.js memory stress test application for container testing",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "start:gc": "node --expose-gc app.js"
+  },
+  "keywords": [
+    "memory",
+    "stress",
+    "test",
+    "container",
+    "azure"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
