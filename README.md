@@ -35,7 +35,7 @@ Use these to:
 
 ```
 high-memory-samples/
-├── docker-compose.yml        # Run all apps with 2 GB memory limits
+├── docker-compose.yml        # Run all apps with 1 GB memory limits
 ├── README.md                 # This file
 ├── python/                   # Flask app — allocates large byte strings
 │   ├── app.py
